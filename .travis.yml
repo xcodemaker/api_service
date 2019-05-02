@@ -9,7 +9,6 @@ script:
   - docker images xcodemaker/api_service
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    docker push xcodemaker/api_service;
-    fi
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push xcodemaker/api_service;
+    
