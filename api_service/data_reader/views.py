@@ -18,16 +18,6 @@ IMPORT_URL = 'http://127.0.0.1:8000'
 def getState(request):
     try:
         code = request.GET['code']
-        # f = open(BASE_DIR+'/json_reader/resources/states_hash.json')
-        # json_string = f.read()
-        # f.close()
-        # data = json.loads(json_string)
-
-        # result = 'No result'
-
-        # for key, value in data.items():
-        #     if(key == code):
-        #         result = value
         headers = {'Content-Type': 'application/json'}
         response = requests.get(
             url=IMPORT_URL + '/codeToState/?code=' +code,
@@ -45,16 +35,6 @@ def getState(request):
 def getCode(request):
     try:
         state = request.GET['state']
-        # f = open(BASE_DIR+'/json_reader/resources/states_titlecase.json')
-        # json_string = f.read()
-        # f.close()
-        # data = json.loads(json_string)
-
-        # result = 'No result'
-
-        # for i in range(len(data)):
-        #     if(data[i]['name'] == state):
-        #         result = data[i]['abbreviation']
         headers = {'Content-Type': 'application/json'}
         response = requests.get(
             url=IMPORT_URL + '/stateToCode?state=' + state,
