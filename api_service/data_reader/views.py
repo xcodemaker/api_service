@@ -12,7 +12,7 @@ import requests
 from api_service.settings import BASE_DIR
 
 
-IMPORT_URL = 'http://127.0.0.1:8000'
+IMPORT_URL = 'http://data-service:8000'
 
 @api_view(["GET"])
 def getState(request):
